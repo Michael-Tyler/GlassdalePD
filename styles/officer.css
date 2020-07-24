@@ -1,0 +1,22 @@
+.officersContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.officerList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.officers {
+    flex-basis: 25%;
+    margin: 10px;
+    padding: 5px;
+    border: 2px solid black;
+}
+
+.officerTitle {
+    margin-left: auto;
+    margin-right: auto;
+}
