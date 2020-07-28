@@ -1,10 +1,10 @@
-import { CriminalsList } from "./criminals/criminalList.js"
-import { OfficersList } from "./officers/officerList.js"
+import { CriminalsList } from "./criminals/CriminalList.js"
+import { OfficersList } from "./officers/OfficerList.js"
 import { ConvictionSelect } from "./convictions/ConvictionsSelect.js";
 
+CriminalsList()
 ConvictionSelect()
 OfficersList()
-CriminalsList()
     // import { getCriminals, useCriminals } from "./criminals/criminalDataProvider.js";
 
 // getCriminals().then(() => {

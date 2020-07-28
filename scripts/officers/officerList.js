@@ -1,5 +1,5 @@
-import { OfficersHTMLConverter } from "./officerHtml.js"
-import { useOfficers, getOfficers } from "./officerProvider.js"
+import { OfficersHTMLConverter } from "./OfficerHtml.js"
+import { useOfficers, getOfficers } from "./OfficerProvider.js"
 
 const contentTarget = document.querySelector(".officersContainer")
 

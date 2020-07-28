@@ -4,9 +4,43 @@
  */
 import { useConvictions, getConvictions } from "./ConvictionProvider.js"
 
-
 // Get a reference to the DOM element where the <select> will be rendered
 const contentTarget = document.querySelector(".filters__crime")
+const eventHub = document.querySelector(".container")
+
+//capture that the user generated a change event by the browser
+contentTarget.addEventListener("change", (changeEvent) => {
+
+    //construct that the user event based on agreement with team
+    const customEvent = new CustomEvent("crimeSelected", {
+        detail: {
+            crimeId: changeEvent.target.value
+        }
+    })
+
+    eventHub.dispatchEvent(customEvent)
+})
+
+
+const render = convictionsCollection => {
+        /*
+            Use interpolation here to invoke the map() method on
+            the convictionsCollection to generate the option elements.
+            Look back at the example provided above.
+        */
+        contentTarget.innerHTML = `
+    <select class="dropdown" id="crimeSelect">
+        <option value="0">Please select a crime...</option>
+        ${
+            convictionsCollection.map(
+                convictionObject => {
+                    return `<option value="${convictionObject.id}">${convictionObject.name}</option>`
+                }
+            ).join("")
+        }
+    </select>
+`
+}
 
 export const ConvictionSelect = () => {
         getConvictions().then(() => {
@@ -15,25 +49,4 @@ export const ConvictionSelect = () => {
 
             render(convictions)
         })
-
-        const render = convictionsCollection => {
-                /*
-                    Use interpolation here to invoke the map() method on
-                    the convictionsCollection to generate the option elements.
-                    Look back at the example provided above.
-                */
-                contentTarget.innerHTML = `
-            <select class="dropdown" id="crimeSelect">
-                <option value="0">Please select a crime...</option>
-                ${
-                    convictionsCollection.map(
-                        convictionObject => {
-                            return `<option>${convictionObject.name}</option>`
-                        }
-                    ).join(",")
-                }
-            </select>
-        `
-    }
-
 }
