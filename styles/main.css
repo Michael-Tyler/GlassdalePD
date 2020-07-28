@@ -1,2 +1,5 @@
 @import "./criminals.css";
 @import "./officer.css";
+.container {
+    display: inline;
+}
