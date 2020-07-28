@@ -1,7 +1,10 @@
 import { OfficersHTMLConverter } from "./OfficerHtml.js"
 import { useOfficers, getOfficers } from "./OfficerProvider.js"
+import { OfficerSelect } from "./OfficerSelect.js"
+import { useCriminals } from "../criminals/CriminalDataProvider.js";
 
 const contentTarget = document.querySelector(".officersContainer")
+
 
 export const OfficersList = () => {
     getOfficers()

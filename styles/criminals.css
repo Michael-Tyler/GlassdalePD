@@ -1,8 +1,3 @@
-.criminalsContainer {
-    display: flex;
-    flex-wrap: wrap;
-}
-
 .criminalList {
     display: flex;
     flex-wrap: wrap;
@@ -17,6 +12,5 @@
 }
 
 .criminalTitle {
-    margin-left: auto;
-    margin-right: auto;
+    text-align: center;
 }
