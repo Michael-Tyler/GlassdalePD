@@ -1,6 +1,6 @@
 export const CriminalsHTMLConverter = (criminalObj) => {
     return `
-    <section class="criminal">
+    <section class="criminals">
         <h3 class="criminal__name">${criminalObj.name}</h3>
         <p class="criminal__age">Age: ${criminalObj.age}</p>
         <p class="criminal__conviction">Crime: ${criminalObj.conviction}</p>
