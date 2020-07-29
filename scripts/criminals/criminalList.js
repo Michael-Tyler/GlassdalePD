@@ -27,25 +27,18 @@ eventHub.addEventListener("crimeSelected", (crimeSelectedEvent) => {
 
 })
 
-eventHub.addEventListener("officerSelect", OfficerSelectedEvent => {
-    // How can you access the officer name that was selected by the user?
-    const OfficerName = OfficerSelectedEvent.name
-        // How can you get the criminals that were arrested by that officer?
-    const criminals = useCriminals()
-    const foundOfficerObject = criminals.find(
-        criminalObject => {
-            if (criminalObject.arrestingOfficer === officerName) {
-                return OfficerName
-            }
+eventHub.addEventListener("officerSelected", OfficerSelectedEvent => {
+    // GOAL filter display of criminals by the arresting officer that was chosen
+
+    //which officer was chosen
+    const officerChosen = OfficerSelectedEvent.detail.officerName
+    const filteredByOfficer = useCriminals().filter(
+        (currentCriminal) => {
+            return currentCriminal.arrestingOfficer === officerChosen
         }
     )
-    const filteredOfficers = useCriminals().filter(
-            (CurrentOfficerObject) => {
-                return foundOfficerObject.name === CurrentOfficerObject.name
-
-            }
-        )
-        //render(filteredOfficers)
+    render(filteredByOfficer)
+        // filter criminal array based on whats chosen
 })
 
 const render = (arrayOfCriminals) => {

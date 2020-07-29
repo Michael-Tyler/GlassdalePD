@@ -7,18 +7,16 @@ const eventHub = document.querySelector(".container")
 
 eventHub.addEventListener("change", changeEvent => {
     if (changeEvent.target.id === "officerSelect") {
-        // Get the name of the selected officer
-        const selectedOfficer = changeEvent.target.value
 
         // Define a custom event
-        const customEvent = new CustomEvent("officerSelected", {
+        const OfficerSelectedEvent = new CustomEvent("officerSelected", {
             detail: {
-                officer: selectedOfficer
+                officerName: changeEvent.target.value
             }
         })
 
         // Dispatch event to event hub
-        eventHub.dispatchEvent(customEvent)
+        eventHub.dispatchEvent(OfficerSelectedEvent)
     }
 })
 
