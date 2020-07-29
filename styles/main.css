@@ -1,5 +1,10 @@
 @import "./criminals.css";
 @import "./officer.css";
-.container {
-    display: inline;
+body {
+    background-image: linear-gradient(to right, blue, black, red);
+}
+
+.filters {
+    display: flex;
+    justify-content: space-between;
 }
