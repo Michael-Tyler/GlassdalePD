@@ -1,16 +1,23 @@
 import { getNotes, useNotes } from "./NoteDataProvider.js"
 import { NoteHTMLConverter } from "./NoteHTMLConverter.js"
 
+
 const contentTarget = document.querySelector(".noteList")
-const newTarget = document.querySelector(".noteList")
+const noteTarget = document.querySelector(".noteList")
 const eventhub = document.querySelector(".container")
 
 eventhub.addEventListener("showNotesClicked", customEvent => {
+    console.log("heard notes")
     NoteList()
+
+})
+
+eventhub.addEventListener("noteStateChanged", () => {
+    render(useNotes())
 })
 
 eventhub.addEventListener("HideNotesClicked", customEvent => {
-    return newTarget.innerHTML = ``
+    return noteTarget.innerHTML = ``
 })
 
 export const NoteList = () => {

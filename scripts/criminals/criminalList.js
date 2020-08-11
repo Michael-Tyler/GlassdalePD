@@ -1,6 +1,7 @@
 import { useCriminals, getCriminals } from "./CriminalDataProvider.js"
 import { CriminalsHTMLConverter } from "./CriminalHTMLConverter.js"
 import { useConvictions } from "../convictions/ConvictionProvider.js"
+import { AssociatesDialog } from "./AsssociatesDialog.js"
 
 const contentTarget = document.querySelector(".criminalsContainer")
 const eventHub = document.querySelector(".container")
@@ -53,6 +54,7 @@ const render = (arrayOfCriminals) => {
     <article class="criminalList">
         ${ CriminalsHTMLRepresentation }
     </article>
+        ${AssociatesDialog()}
     `
 
 }

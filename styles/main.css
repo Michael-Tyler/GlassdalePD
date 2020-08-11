@@ -6,7 +6,6 @@ body {
 
 .filters {
     display: flex;
-    justify-content: space-between;
 }
 
 .lists {
@@ -17,7 +16,7 @@ body {
     flex: 4;
 }
 
-.noteListContainer {
+.noteAside {
     flex: 1;
 }
 
@@ -41,6 +40,5 @@ body {
     flex-direction: column;
     border: 2px solid white;
     max-width: 250px;
-    margin-right: auto;
     padding: .35rem;
 }
