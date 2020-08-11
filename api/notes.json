@@ -1,46 +1,9 @@
 {
-  "notes": [
-    {
-      "noteTitle": "STOP",
-      "noteAuthor": "MC HAMMER",
-      "noteContent": "CANT STOP ME!",
-      "timestamp": 1596053248053,
-      "id": 1
-    },
-    {
-      "noteTitle": "javascript did it",
-      "noteAuthor": "Michael",
-      "noteContent": "With your perfect punctuation and must match spelling!!!",
-      "timestamp": 1596053321377,
-      "id": 2
-    },
-    {
-      "noteTitle": "Not food",
-      "noteAuthor": "Bruce",
-      "noteContent": "Fish are friends not food!",
-      "timestamp": 1596055576148,
-      "id": 3
-    },
-    {
-      "noteTitle": "Dad joke gone bad",
-      "noteAuthor": "Fred",
-      "noteContent": "Fred said ill taste joke at Christmas party",
-      "timestamp": 1596055661515,
-      "id": 4
-    },
-    {
-      "noteTitle": "The case of the missing CSS",
-      "noteAuthor": "michael",
-      "noteContent": "still learning this whole CSS thing.\n\nGonna add some spacing in this message to see what happens.",
-      "timestamp": 1596118584306,
-      "id": 5
-    },
-    {
-      "noteTitle": "check spacing again",
-      "noteAuthor": "spacing",
-      "noteContent": "words words words!\n.\n.\n.\nLorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam accusantium dolore vitae omnis esse provident voluptatum nulla repudiandae! Neque rem officia suscipit nesciunt optio expedita.",
-      "timestamp": 1596118693810,
-      "id": 6
-    }
-  ]
+    "notes": [{
+        "noteTitle": "STOP",
+        "noteAuthor": "MC HAMMER",
+        "noteContent": "CANT STOP ME!",
+        "timestamp": 1596053248053,
+        "id": 1
+    }]
 }
