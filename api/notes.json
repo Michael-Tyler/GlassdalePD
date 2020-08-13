@@ -1,9 +1,11 @@
 {
-    "notes": [{
-        "noteTitle": "STOP",
-        "noteAuthor": "MC HAMMER",
-        "noteContent": "CANT STOP ME!",
-        "timestamp": 1596053248053,
-        "id": 1
-    }]
+  "notes": [
+    {
+      "noteText": "Can't stop me!!!",
+      "noteAuthor": "Mc Hammer",
+      "criminalId": 60,
+      "timestamp": 1597342427594,
+      "id": 1
+    }
+  ]
 }

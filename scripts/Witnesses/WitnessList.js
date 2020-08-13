@@ -6,7 +6,6 @@ const contentTarget = document.querySelector(".witnessContainer")
 const eventHub = document.querySelector(".container")
 
 eventHub.addEventListener("witnessButtonClicked", customEvent => {
-    console.log("Heard witness button")
     witnessList()
 })
 

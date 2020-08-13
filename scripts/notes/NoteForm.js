@@ -1,4 +1,5 @@
 import { saveNote } from "./NoteDataProvider.js"
+import { useCriminals, getCriminals } from "../criminals/CriminalDataProvider.js"
 
 const eventHub = document.querySelector(".container")
 const contentTarget = document.querySelector(".noteFormContainer")
@@ -7,32 +8,52 @@ const contentTarget = document.querySelector(".noteFormContainer")
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "saveNote") {
 
-        const noteTitle = document.querySelector("#note--title")
+        const noteText = document.querySelector("#note--Text")
         const noteAuthor = document.querySelector("#note--author")
-        const noteContent = document.querySelector("#note--content")
+        const noteCriminal = document.querySelector("#criminalSelect")
 
-        // Make a new object representation of a note
-        const newNote = {
-                noteTitle: noteTitle.value,
-                noteAuthor: noteAuthor.value,
-                noteContent: noteContent.value,
-                timestamp: Date.now()
-            }
-            // Change API state and application state
-        saveNote(newNote)
+        const criminalId = parseInt(noteCriminal.value)
+        const author = noteAuthor.value
+        const content = noteText.value
+
+        if (criminalId !== 0 && author !== "" && content !== "") {
+            // Make a new object representation of a note
+            const newNote = {
+                    noteText: noteText.value,
+                    noteAuthor: noteAuthor.value,
+                    criminalId: parseInt(noteCriminal.value),
+                    timestamp: Date.now()
+                }
+                // Change API state and application state
+            saveNote(newNote)
+        } else {
+            window.alert("Please fill out entire form")
+        }
     }
 })
 
-const render = () => {
-    contentTarget.innerHTML = `
-        <input type="text" id="note--title" placeholder="Title" />
-        <input type="text" id = "note--author" placeholder = "Your name here" />
-        <textarea id="note--content" placeholder="Note text here"></textarea>
+const render = (criminalCollection) => {
+
+        contentTarget.innerHTML = `
+    <select class="dropdown" id="criminalSelect">
+    <option value ="0">Please Select a Criminal...</option>
+    ${
+        criminalCollection.map(
+            criminalObject => {
+                return `<option value="${criminalObject.id}">${criminalObject.name}</option>`
+            }
+        ).join("")
+    }
+        <input type="text" id ="note--author" placeholder = "Your name here" />
+        <textarea id="note--Text" placeholder="Note text here"></textarea>
 
         <button id="saveNote">Save Note</button>
     `
 }
 
 export const NoteForm = () => {
-    render()
+    getCriminals().then(() =>{
+        render(useCriminals())
+    })
+        
 }
