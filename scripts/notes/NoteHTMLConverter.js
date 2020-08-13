@@ -15,7 +15,7 @@ export const NoteHTMLConverter = (noteObject, criminalObject) => {
     <section class="note">
         <h2>Note about ${criminalObject.name}</h2>
         ${noteObject.noteText}
-        <h5>${noteObject.noteAuthor}</h5>
+        <h5>Note Author: ${noteObject.noteAuthor}</h5>
         <div class="note--timestamp">Date: ${ new Date(noteObject.timestamp).toLocaleDateString('en-US')  }</div>
     </section>
 `
